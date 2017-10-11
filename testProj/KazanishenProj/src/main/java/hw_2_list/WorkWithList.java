@@ -38,14 +38,19 @@ public class WorkWithList extends WorkWithAbstractList{
 
 
     // Home work part 2
-     public static int[][] generateTwoDimensionalArray(int sizeX, int sizeY, int value){
-        int[][] arr = new int[sizeX][sizeY];
-         for (int i =0; i < arr.length; i++){
-             for (int j = 0; j < arr[i].length; j++){
-                 arr[i][j] = value;
-             }
-         }
-        return arr;
+     public static int[][] generateTwoDimensionalArray(int sizeX, int sizeY, int value) throws Exception{
+        if(sizeX == 0 || sizeY == 0){
+            throw new Exception("Incorrect matrix size");
+            }
+        else{
+            int[][] arr = new int[sizeX][sizeY];
+            for (int i =0; i < arr.length; i++){
+                for (int j = 0; j < arr[i].length; j++){
+                    arr[i][j] = value;
+                }
+            }
+            return arr;
+            }
      }
      public static void printArray(int[][] arr){
          for (int i =0; i < arr.length; i++){
@@ -90,10 +95,20 @@ public class WorkWithList extends WorkWithAbstractList{
 
         // Home work part 2
 
-        int[][] arr = generateTwoDimensionalArray(4,4, 5);
-        printArray(arr);
-        putValueInArrayDiagonal(arr, 1);
-        printArray(arr);
+        int[][] arr;
+        try{
+            arr = generateTwoDimensionalArray(5,4, 5);
+            printArray(arr);
+            putValueInArrayDiagonal(arr, 1);
+            printArray(arr);
+        }
+        catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+
+
+
 
 
     }
