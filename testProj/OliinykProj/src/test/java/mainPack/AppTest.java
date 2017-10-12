@@ -30,6 +30,7 @@ public class AppTest
 
     /**
      * Rigourous Test :-)vufuf
+     * Rigourous Test :-)test
      */
     public void testApp()
     {
