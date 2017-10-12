@@ -12,6 +12,7 @@ public class AppTest
 {
     /**
      * Create the test case
+     * comment
      *
      * @param testName name of the test case
      */
@@ -29,8 +30,7 @@ public class AppTest
     }
 
     /**
-     * Rigourous Test :-)vufuf
-     * Rigourous Test :-)test
+     * Rigourous Test :-)
      */
     public void testApp()
     {
