@@ -20,21 +20,24 @@ public class WorkWithList extends WorkWithAbstractList{
 
     public void printListList(List<List<String>> ourList){
         System.out.println("---------");
-        for(int i =0; i < ourList.size(); i++){
-            if (ourList.get(i).size() == 0){
-                System.out.print("[]");
-            }
-            else {
-                for(int j = 0; j < ourList.get(i).size(); j++) {
-                    System.out.print("["+ourList.get(i).get(j)+"]");
-                    if (j != (ourList.get(i).size() - 1)){
-                        System.out.print(", ");
-                    }
-                }
-            }
+//        for(int i =0; i < ourList.size(); i++){
+//            if (ourList.get(i).size() == 0){
+//                System.out.print("[]");
+//            }
+//            else {
+//                for(int j = 0; j < ourList.get(i).size(); j++) {
+//                    System.out.print("["+ourList.get(i).get(j)+"]");
+//                    if (j != (ourList.get(i).size() - 1)){
+//                        System.out.print(", ");
+//                    }
+//                }
+//            }
+        for (List<String>  elemetList:ourList) {
+            System.out.println(elemetList);
+        }
             System.out.println();
         }
-    }
+
 
 
     // Home work part 2
@@ -97,7 +100,7 @@ public class WorkWithList extends WorkWithAbstractList{
 
         int[][] arr;
         try{
-            arr = generateTwoDimensionalArray(5,4, 5);
+            arr = generateTwoDimensionalArray(0,4, 5);
             printArray(arr);
             putValueInArrayDiagonal(arr, 1);
             printArray(arr);
