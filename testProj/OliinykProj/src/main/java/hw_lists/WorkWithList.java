@@ -23,20 +23,8 @@ public class WorkWithList extends WorkWithAbstractList {
 
     void printListList(List<List<String>> ourList){
         System.out.println("---------");
-        for(List<String> l : ourList){
-            System.out.print("[");
-            String out = "";
-            int i =0;
-            for(String s : l){
-                if(i==0||i==l.size()) {
-                    out += s;
-                }
-                else {
-                    out+=", "+s;
-                }
-                i++;
-            }
-            System.out.println(out+"]");
+        for(List<String> stringList : ourList) {
+            System.out.println(stringList);
         }
     }
 }
