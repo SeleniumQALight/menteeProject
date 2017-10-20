@@ -18,5 +18,6 @@
     <module>KazanishenProj</module>
     <module>OliinykProj</module>
     <module>KoshelyukProj</module>
+    <module>overAll</module>
   </modules>
 </project>
