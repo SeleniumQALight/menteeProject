@@ -9,11 +9,11 @@ public class MainClass1 {
         String rez2;
         int rez3;
         int rez4;
-        LibClass a, libClass;
+        LibClass1 a, libClass;
         int arr[] = { 2, 4, 26, 7, 28, 10, 9, 20, 33 };
         int len = arr.length;
 
-        a = new LibClass();
+        a = new LibClass1();
         rez1 = a.sum("asdf", 1);
         System.out.println(rez1);
         rez2 = a.sum("a", "b");
