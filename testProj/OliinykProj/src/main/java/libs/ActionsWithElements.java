@@ -1,15 +1,16 @@
 package libs;
 
 import org.apache.log4j.Logger;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ActionsWithOurElements {
+public class ActionsWithElements {
     WebDriver webDriver;
     Logger logger;
 
-    public ActionsWithOurElements(WebDriver webDriver) {
+    public ActionsWithElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
     }
@@ -45,3 +46,4 @@ public class ActionsWithOurElements {
 
 
 }
+
