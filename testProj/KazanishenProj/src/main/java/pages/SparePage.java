@@ -26,7 +26,7 @@ public class SparePage extends PerentPage {
     }
 
     public void clickOnSpareTypeDropDownByText(String text){
-        actionsWithOurElements.clickOnSpareDropDownElementByText(text);
+        actionsWithOurElements.clickOnSpareDropDownElementByText(spareDropDown, text);
     }
 
     public void clickOnAddNewSpareButton() {

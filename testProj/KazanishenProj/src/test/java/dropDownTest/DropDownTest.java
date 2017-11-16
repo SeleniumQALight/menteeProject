@@ -17,7 +17,7 @@ public class DropDownTest extends ParentTest {
         sparePage.clickOnAddNewSpareButton();
 
         sparePage.enterSpareNameToInoutSpareName("MySpare");
-        sparePage.clickOnSpareDropDown();
+
         sparePage.clickOnSpareTypeDropDownByText("Механика");
         sparePage.clickOnCreateNewSpareButton();
 

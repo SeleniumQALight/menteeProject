@@ -42,7 +42,9 @@ public class ActionsWithOurElements {
         }
     }
 
-    public void clickOnSpareDropDownElementByText(String valueForSelection){
+    public void clickOnSpareDropDownElementByText(WebElement dropDownElement,String valueForSelection){
+
+        clickOnElement(dropDownElement);
         try{
             WebElement selectedElement = webDriver.findElement(By.xpath(".//option[text()='"+valueForSelection+"']"));
             clickOnElement(selectedElement);
