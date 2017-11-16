@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
@@ -43,5 +44,60 @@ public class ActionsWithOurElements {
         }
     }
 
+    /**
+     * Method selected TEXT in dropDown
+     * @param dropDownElement
+     * @param textForSelection
+     */
+    public void selectTextInDropDown(WebElement dropDownElement, String textForSelection) {
+        try {
+            Select optionsFromDD = new Select(dropDownElement);
+            optionsFromDD.selectByVisibleText(textForSelection);
+            logger.info(textForSelection + " text was selected in DropDown");
+        } catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
 
+    /**
+     * Method selected Value in dropDown
+     * @param dropDownElement
+     * @param valueForSelection
+     */
+    public void selectValueInDropDown(WebElement dropDownElement, String valueForSelection) {
+        try {
+            Select optionsFromDD = new Select(dropDownElement);
+            optionsFromDD.selectByValue(valueForSelection);
+            logger.info(valueForSelection + " value was selected in DropDown");
+        } catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
+
+    /**
+     * Method
+     * @param state only !!! [Check Or Uncheck]
+     * @param checkBox
+     */
+    public void setStateInCheckBox(String state, WebElement checkBox){
+
+        try{
+            if (checkBox.isSelected() && "Check".equals(state)){
+                logger.info("Check Box is checked");
+            } else if (checkBox.isSelected() && "Uncheck".equals(state)){
+                checkBox.click();
+                logger.info("CheckBox was unchecked");
+            } else if (!checkBox.isSelected() && "Check".equals(state)){
+                checkBox.click();
+                logger.info("CheckBox was checked");
+            } else if (!checkBox.isSelected() && "Uncheck".equals(state) ){
+                logger.info("Check Box is unchecked");
+            }
+        }catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
 }

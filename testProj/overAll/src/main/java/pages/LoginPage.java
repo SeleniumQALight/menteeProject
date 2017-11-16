@@ -51,4 +51,10 @@ public class LoginPage extends PerentPage{
         actionsWithOurElements.clickOnElement(buttonLogIn);
     }
 
+    public void loginInApp(String login, String pass) {
+        openLoginPage();
+        enterLoginToInputLogin(login);
+        enterPassToInputPass(pass);
+        clickButtonLogIn();
+    }
 }
