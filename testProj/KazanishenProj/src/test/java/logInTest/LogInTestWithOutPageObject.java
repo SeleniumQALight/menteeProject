@@ -1,4 +1,4 @@
-package negativeLoginTest;
+package logInTest;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class LoginTestWithEmptyPassword {
+public class LogInTestWithOutPageObject {
     WebDriver webDriver;
 
     @Before
@@ -29,23 +29,14 @@ public class LoginTestWithEmptyPassword {
     }
 
     @Test
-    public void validLogInWithEmptyPassword() {
+    public void validLogIn() {
         webDriver.get("http://v3.test.itpmgroup.com/login");
         webDriver.findElement(By.name("_username")).sendKeys("Student");
-        webDriver.findElement(By.name("_password")).sendKeys("");
+        webDriver.findElement(By.name("_password")).sendKeys("909090");
         webDriver.findElement(By.xpath(".//button[@type='submit']")).click();
 //        Assert.assertTrue("Mess",false);
-        // Assert.assertTrue("Message", webDriver.findElement(By.xpath(".//span[text()='Студент']")).isDisplayed());
-        Assert.assertFalse("Login with empty password was success", findElementByXpath(".//span[text()='Студент']"));
+        Assert.assertTrue("Message", webDriver.findElement(By.xpath(".//span[text()='Студент']")).isDisplayed());
     }
-    public boolean findElementByXpath(String locator){
-        try{
-            webDriver.findElement(By.xpath(locator)).isDisplayed();
-            return true;
-        }
-        catch (Exception ex){
-            return false;
-        }
-    }
-    //testdata
+
+
 }
