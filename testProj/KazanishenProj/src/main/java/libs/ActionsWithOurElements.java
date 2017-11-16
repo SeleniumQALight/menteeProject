@@ -42,7 +42,7 @@ public class ActionsWithOurElements {
         }
     }
 
-    public void clickOnSpareDropDownElementByText(WebElement dropDownElement,String valueForSelection){
+    public void clickOnDropDownElementByText(WebElement dropDownElement, String valueForSelection){
 
         clickOnElement(dropDownElement);
         try{

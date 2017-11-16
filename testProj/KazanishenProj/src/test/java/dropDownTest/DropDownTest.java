@@ -15,11 +15,9 @@ public class DropDownTest extends ParentTest {
         homePage.clickOnSubMenuSpare();
 
         sparePage.clickOnAddNewSpareButton();
-
-        sparePage.enterSpareNameToInoutSpareName("MySpare");
-
-        sparePage.clickOnSpareTypeDropDownByText("Механика");
-        sparePage.clickOnCreateNewSpareButton();
+        addNewSparePage.enterSpareNameToInputSpareName("MySpare");
+        addNewSparePage.clickOnSpareDropDownElementByText("Механика");
+        addNewSparePage.clickOnCreateNewSpareButton();
 
         checkAcceptanceCriteria(" Avatar is not present",homePage.isAvatarPresent(), true);
     }

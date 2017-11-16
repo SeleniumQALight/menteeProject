@@ -9,6 +9,7 @@ import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.AddNewSparePage;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SparePage;
@@ -23,6 +24,7 @@ public class ParentTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected SparePage sparePage;
+    protected AddNewSparePage addNewSparePage;
     Logger logger;
     private Utils utils = new Utils();
 
