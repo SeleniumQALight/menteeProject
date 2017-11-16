@@ -6,6 +6,6 @@ public class SelectTest extends ParentTest{
     public void selectVolvo(){
         mainPage.openPage();
         mainPage.selectInSelectElement("volvo");
-        //checkAcceptanceCriteria(" Avatar is not present",homePage.isAvatarPresent(), true);
+        //checkAcceptanceCriteria("Visible text doesn't match",mainPage.getSelectedItemText(), "Volvo");
     }
 }

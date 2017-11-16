@@ -1,19 +1,16 @@
 package pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class MainPage extends PerentPage{
-    WebDriver webDriver;
 
     @FindBy(tagName = "select")
-    private WebElement select;
-
-    @FindBy(xpath = ".//*/select/option[@value = 'volvo']")
-    private WebElement volvoSelection;
-
+    private WebElement dropDown;
 
     public MainPage(WebDriver webDriver) {
         super(webDriver);
@@ -28,15 +25,10 @@ public class MainPage extends PerentPage{
         }
     }
 
-    public void selectInSelectElement(String selectionText) {
-        WebElement option;
-        switch (selectionText){
-            case "volvo":
-                option = volvoSelection;
-                break;
-            default:
-                Assert.fail("Incorrect element name");
-        }
-
+    public void selectInSelectElement(String selectionValue) {
+        WebElement option = webDriver.findElement(By.xpath(".//*/select/option[@value = '"+selectionValue+"']"));
+        actionsWithElements.selectOptionFromDropDown(dropDown, option);
     }
+
+
 }

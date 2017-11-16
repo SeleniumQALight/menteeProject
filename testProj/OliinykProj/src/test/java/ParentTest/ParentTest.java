@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class ParentTest {
     public WebDriver webDriver;
     protected MainPage mainPage;
+
     @Before
     public void setUp() {
         File fileFF = new File(".././drivers/chromedriver.exe");
@@ -30,6 +31,9 @@ public class ParentTest {
 
 
     protected void checkAcceptanceCriteria(String message, boolean actual,boolean expected){
-        Assert.assertEquals(message, actual, expected);
+        Assert.assertEquals(message, expected, actual);
+    }
+    protected void checkAcceptanceCriteria(String message, String actual, String expected){
+        Assert.assertEquals(message, expected, actual);
     }
 }

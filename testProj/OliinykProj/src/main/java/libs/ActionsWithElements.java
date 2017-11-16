@@ -1,5 +1,6 @@
 package libs;
 
+import org.openqa.selenium.support.ui.Select;
 import org.apache.log4j.Logger;
 
 import org.junit.Assert;
@@ -44,6 +45,24 @@ public class ActionsWithElements {
         }
     }
 
+    public String getTextFromElement(WebElement element) {
+        try {
+            return element.getText();
+        } catch (Exception e) {
+            Assert.fail("Couldn't get element or element's text");
+            return null;
+        }
+    }
+
+    public void selectOptionFromDropDown(WebElement select, WebElement option)
+    {
+        try{
+            select.click();
+            option.click();
+        }catch(Exception e){
+            Assert.fail("Cannot find Select or Option");
+        }
+    }
 
 }
 

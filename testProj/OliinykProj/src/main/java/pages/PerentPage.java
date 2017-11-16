@@ -8,12 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 public class PerentPage {
     public WebDriver webDriver;
     Logger logger;
-    ActionsWithElements actionsWithOurElements;
+    ActionsWithElements actionsWithElements;
 
     public PerentPage(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
         PageFactory.initElements(webDriver,this);
-        actionsWithOurElements = new ActionsWithElements(webDriver);
+        actionsWithElements = new ActionsWithElements(webDriver);
     }
 }
