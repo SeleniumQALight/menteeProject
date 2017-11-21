@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PerentPage {
-    @FindBy(xpath = ".//span[text()='Студент']")
+    @FindBy(xpath = ".//span[text()='StudentNew']")
     WebElement avatar;
 
     @FindBy(xpath = ".//*[@id='dictionary']/a")
