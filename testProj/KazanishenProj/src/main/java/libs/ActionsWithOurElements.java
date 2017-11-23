@@ -5,20 +5,19 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import pages.HomePage;
-
-import javax.swing.*;
-import javax.xml.bind.Element;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ActionsWithOurElements {
     WebDriver webDriver;
     Logger logger;
+    WebDriverWait webDriverWait10;
 
     public ActionsWithOurElements(WebDriver webDriver) {
         this.webDriver = webDriver;
         logger = Logger.getLogger(getClass());
+        webDriverWait10 = new WebDriverWait(webDriver, 10);
     }
 
     public void enterTextInToInput(WebElement element,String text){
@@ -34,6 +33,7 @@ public class ActionsWithOurElements {
 
     public void clickOnElement(WebElement element) {
         try{
+            webDriverWait10.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
             logger.info("Element was clicked ");
         }catch (Exception e){
@@ -54,6 +54,17 @@ public class ActionsWithOurElements {
             logger.error("can not find element");
             Assert.fail("can not find element");
         }
+    }
+
+    public boolean isElementPresent(String xpath){
+        try{
+            return isElementPresent(webDriver.findElement(By.xpath(xpath)));
+        }
+        catch (Exception e){
+            logger.error("Element is not present");
+            return false;
+        }
+
     }
 
 

@@ -14,6 +14,11 @@ public class HomePage extends PerentPage {
     @FindBy(xpath = ".//a[@href='/dictionary/spares']")
     private WebElement subMenuSpare;
 
+    @FindBy(className = "sidebar-toggle")
+    private WebElement sidebarToggleButton;
+
+    @FindBy(className = "img-circle")
+    private WebElement avatarOnLeftSide;
 
 
     public HomePage(WebDriver webDriver) {
@@ -24,6 +29,12 @@ public class HomePage extends PerentPage {
         return actionsWithOurElements.isElementPresent(avatar);
     }
 
+    public boolean isSubMenuSparePresent() {
+        return actionsWithOurElements.isElementPresent(subMenuSpare);
+    }
+
+    public boolean isAvatarOnLeftSidePresent(){return actionsWithOurElements.isElementPresent(avatarOnLeftSide);}
+
     public void clickOnMenuDictionary() {
         actionsWithOurElements.clickOnElement(menuDictionary);
     }
@@ -31,6 +42,8 @@ public class HomePage extends PerentPage {
     public void clickOnSubMenuSpare(){
         actionsWithOurElements.clickOnElement(subMenuSpare);
     }
+
+    public void clickOnSidebarToggleButton(){actionsWithOurElements.clickOnElement(sidebarToggleButton);}
 
 
 

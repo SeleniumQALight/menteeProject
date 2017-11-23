@@ -15,4 +15,9 @@ public class SparePage extends PerentPage {
     public void clickOnAddNewSpareButton() {
         actionsWithOurElements.clickOnElement(addNewSpareButton);
     }
+
+    public boolean isElementInSpareList(String spareName, String spareType){
+        return actionsWithOurElements.isElementPresent(".//tbody/tr[./td[text()='"+spareName+"'] and .//td[text()='"+spareType+"']]");
+    }
+
 }
