@@ -64,5 +64,21 @@ public class ActionsWithElements {
         }
     }
 
+    /**
+     * Method selected Value in dropDown
+     * @param dropDownElement
+     * @param textForSelection
+     */
+    public void selectTextInDropDown(WebElement dropDownElement, String textForSelection) {
+        try {
+            Select optionsFromDD = new Select(dropDownElement);
+            optionsFromDD.selectByVisibleText(textForSelection);
+            logger.info(textForSelection + " value was selected in DropDown");
+        } catch (Exception e) {
+            logger.error("Can not work with element");
+            Assert.fail("Can not work with element");
+        }
+    }
+
 }
 

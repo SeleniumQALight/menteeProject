@@ -5,14 +5,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.EditSparePage;
+import pages.LoginPage;
 import pages.MainPage;
+import pages.SparePage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class ParentTest {
     public WebDriver webDriver;
+    protected LoginPage loginPage;
     protected MainPage mainPage;
+    protected SparePage sparePage;
+    protected EditSparePage editSparePage;
 
     @Before
     public void setUp() {
@@ -21,7 +27,10 @@ public class ParentTest {
         webDriver = new ChromeDriver();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
+        loginPage = new LoginPage(webDriver);
         mainPage = new MainPage(webDriver);
+        sparePage=new SparePage(webDriver);
+        editSparePage = new EditSparePage(webDriver);
     }
 
     @After
