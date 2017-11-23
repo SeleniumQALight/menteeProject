@@ -35,7 +35,7 @@ public class LogInTestWithOutPageObject {
         webDriver.findElement(By.name("_password")).sendKeys("909090");
         webDriver.findElement(By.xpath(".//button[@type='submit']")).click();
 //        Assert.assertTrue("Mess",false);
-        Assert.assertTrue("Message", webDriver.findElement(By.xpath(".//span[text()='Студент']")).isDisplayed());
+        Assert.assertTrue("Message", webDriver.findElement(By.xpath(".//span[text()='StudentNew']")).isDisplayed());
     }
 
 
