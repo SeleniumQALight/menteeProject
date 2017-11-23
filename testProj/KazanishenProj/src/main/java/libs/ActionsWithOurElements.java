@@ -56,10 +56,9 @@ public class ActionsWithOurElements {
         }
     }
 
-    public boolean findElementInListByName(String recordName, String recordType){
-
+    public boolean isElementPresent(String xpath){
         try{
-            return isElementPresent(webDriver.findElement(By.xpath(".//tbody/tr[./td[text()='"+recordName+"'] and .//td[text()='"+recordType+"']]")));
+            return isElementPresent(webDriver.findElement(By.xpath(xpath)));
         }
         catch (Exception e){
             logger.error("Element is not present");

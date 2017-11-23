@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +17,7 @@ public class SparePage extends PerentPage {
     }
 
     public boolean isElementInSpareList(String spareName, String spareType){
-        return actionsWithOurElements.findElementInListByName(spareName,spareType);
+        return actionsWithOurElements.isElementPresent(".//tbody/tr[./td[text()='"+spareName+"'] and .//td[text()='"+spareType+"']]");
     }
 
 }
