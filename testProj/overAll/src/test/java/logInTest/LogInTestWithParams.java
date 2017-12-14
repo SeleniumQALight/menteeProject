@@ -11,7 +11,8 @@ import java.util.Collection;
 @RunWith(value = Parameterized.class)
 public class LogInTestWithParams extends ParentTest{
    String login, pass;
-    public LogInTestWithParams(String login, String pass){
+    public LogInTestWithParams(String browser, String login, String pass){
+        super(browser);
         this.login = login;
         this.pass = pass;
     }
@@ -19,8 +20,8 @@ public class LogInTestWithParams extends ParentTest{
     @Parameterized.Parameters
     public static Collection testDData(){
         return Arrays.asList(new Object[][]{
-                {"Student","909090"},
-                {"tudent","909090"}
+                {"chrome","Student","909090"},
+                {"iedriver","Student","909090"}
         });
     }
 
