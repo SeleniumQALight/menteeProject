@@ -12,7 +12,7 @@ import java.util.Map;
 public class LogInTest extends ParentTest{
 
     public LogInTest() {
-        super("chrome");
+        super("remote");
     }
 
     @Test
