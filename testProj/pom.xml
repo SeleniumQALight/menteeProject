@@ -29,6 +29,7 @@
   </resources>
   </build>
   <modules>
+    <module>jBehaveProject</module>
     <module>KazanishenProj</module>
     <module>OliinykProj</module>
     <module>KoshelyukProj</module>
